@@ -1,0 +1,158 @@
+name: newsappclone
+description: A new Flutter application.
+
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 2.3.3+146
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_svg: ^0.22.0
+  flutter_html: ^2.1.0
+  url_launcher: ^6.0.3
+
+
+  #stateMaagment
+  stacked: ^2.1.0
+  #navigation
+  auto_route: ^1.0.2
+  stacked_services: ^0.8.0-nullsafety.1
+  get_it: ^6.0.0
+  injectable: ^1.2.2
+  dio: ^4.0.0
+  pretty_dio_logger: ^1.2.0-beta-1
+  badges: ^2.0.1
+
+  cached_network_image: ^3.0.0-nullsafety
+  video_player:
+  chewie: ^1.2.2
+
+  #helpers
+  enum_to_string: ^2.0.1
+
+  #Widget
+  shimmer: ^2.0.0
+  pull_to_refresh: ^2.0.0
+  search_choices: ^2.0.3
+  grouped_list: ^4.0.0
+
+  #riverpod
+  flutter_hooks: ^0.16.0
+  hooks_riverpod: ^0.14.0+3
+
+  #graphQl
+  graphql: ^5.0.0-nullsafety.4
+  gql: ^0.13.0-nullsafety.2
+
+  #smooth_page_indicator: ^0.3.0-nullsafety.0
+  # smooth_page_indicator:
+  #   git:
+  #     url: https://github.com/mahirekici/SmoothIndicator
+  #     ref: main
+
+  #formater
+  sprintf: ^6.0.0
+
+  #Datetime formatter
+  intl: ^0.17.0
+  #bir dakika önce , 3 saat önce ...
+  jiffy: ^4.1.0
+  #flutter_slidable: ^0.6.0
+
+
+  carousel_slider:
+    git:
+      url: https://muharrem.turhan:irrb77rdzqd4wihe6peeqswbmd23cx5522vlhbunwgvu7m2c4zza@dev.azure.com/pirimedya/Piri.App.Frameworks/_git/Piri.App.Flutter.Carousel
+      ref: develop
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner: ^1.10.13
+  injectable_generator: ^1.2.2
+  stacked_generator:
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/svg/
+    - assets/png/
+
+
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: fonts/Inter-Thin.ttf
+          weight: 100
+        - asset: fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/Inter-Light.ttf
+          weight: 300
+        - asset: fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: fonts/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/Inter-Black.ttf
+          weight: 900
+
+
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
