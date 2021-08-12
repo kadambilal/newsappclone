@@ -77,10 +77,6 @@ class MainToolbar extends StatelessWidget {
   }
 
   Widget getLogo(BuildContext context) {
-    return SvgPicture.asset(
-      "assets/svg/w-logo-app.svg",
-      height: 32,
-      width: 121,
-    );
+    return Text("News App Clone");
   }
 }

@@ -25,8 +25,8 @@ class HeadlineTopWidget extends StatelessWidget {
             return Text("");
           } else {
             return Container(
-              height: 262,
-              width: 400,
+              alignment: Alignment.center,
+              height: 233,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: snapshot.data!.news.length,
@@ -35,14 +35,13 @@ class HeadlineTopWidget extends StatelessWidget {
                     String? image = snapshot.data!.news[index].coverImg;
                     return
                        Card(
-                         shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(10.0),
-                         ),
-                          color: Colors.black,
+                        //  color: Colors.red,
                          child: Stack(
+                           alignment: Alignment.center,
                            children: [
-                             Positioned(child: Image.network(image.toString(),width: 400,height: 300,),),
-                             Positioned(top:180, left: 30,height: 125,width: 300, child: Text(title.toString(),maxLines: 3,style: TextStyle(color: Colors.yellowAccent,fontSize: 20,backgroundColor:Colors.black),) ,),
+                             Positioned(child: Image.network(image.toString()),),
+                             Positioned(top:180, left: 30,height: 125,width: 300, child: Text(title.toString(),
+                               maxLines: 3,style: TextStyle(color: Colors.yellowAccent,fontSize: 20,backgroundColor:Colors.black),) ,),
                            ],
 
                          ),

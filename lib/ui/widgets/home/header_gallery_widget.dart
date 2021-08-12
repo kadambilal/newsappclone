@@ -27,7 +27,7 @@ class HeadlineGalleryWidget extends StatelessWidget {
             );
             return Container(
               height: 150,
-              width: 150,
+
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: snapshot.data!.galleryNews.length,
@@ -39,7 +39,7 @@ class HeadlineGalleryWidget extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      color: Colors.black,
+                     color: Colors.black,
                         child: Stack(
                             children: [
                               Positioned(child: Image.network(url1.toString()),),

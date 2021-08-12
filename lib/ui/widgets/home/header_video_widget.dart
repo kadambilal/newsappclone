@@ -18,8 +18,7 @@ class HeadlineVideoWidget extends StatelessWidget {
             return SizedBox();
           } else {
             return Container(
-              height: 150,
-              width: 150,
+              height: 134,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: snapshot.data!.videoNews.length,
@@ -35,7 +34,7 @@ class HeadlineVideoWidget extends StatelessWidget {
                         child :  Stack(
                             children: [
                             Positioned(child: Image.network(image.toString()),),
-                            Positioned(top:90, left: 20,height: 125,width: 145, child: Text(spot.toString(),maxLines: 3,
+                            Positioned(top:75, left: 20,height: 125,width: 150, child: Text(spot.toString(),maxLines: 3,
                             style: TextStyle(color: Colors.white,fontSize: 13,backgroundColor:Colors.black,),) ,),
                             ],
 

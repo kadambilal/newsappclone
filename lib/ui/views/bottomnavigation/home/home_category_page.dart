@@ -66,29 +66,49 @@ class HomeCategoryPage extends StatelessWidget {
      // physics: ClampingScrollPhysics(),
       builder: (context, index) {
         String? categoryName = category.name;
-      if (index < snapshot.data!.length) {
+      if (index < snapshot.data!.length*2) {
           if(index==0) {
             return  Padding(
-                    padding: const EdgeInsets.all(1.0),
+                    padding: const EdgeInsets.only(left:1.0),
                     child: HeadlineTopWidget(category: categoryName) //onemlli header tab.
             );
           }
+
           else if(index==1 ) {
             return  Padding(
-                padding: const EdgeInsets.all(1.0),
-                child: HeadlineGalleryWidget(category: categoryName) //onemlli header tab.
+                padding: const EdgeInsets.only(left:180.0),
+                child: Text("Foto Galeri",style: TextStyle(fontSize: 17,color: Colors.white),)
             );
           }
           else if(index==2 ) {
             return  Padding(
                 padding: const EdgeInsets.all(1.0),
-                child: HeadlineVideoWidget(category: categoryName) //onemlli header tab.
+                child: HeadlineGalleryWidget(category: categoryName)
             );
           }
-          else if(index==3 && categoryName =="Bugun" ) {
+          else if(index==3 ) {
+            return  Padding(
+                padding: const EdgeInsets.only(left:180.0),
+                child: Text("Video Galeri",style: TextStyle(fontSize: 17,color: Colors.white),)
+
+            );
+          }
+          else if(index==4 ) {
             return  Padding(
                 padding: const EdgeInsets.all(1.0),
-                child: HeadlineAuthorWidget(category: categoryName) //onemlli header tab.
+                child: HeadlineVideoWidget(category: categoryName)
+            );
+          }
+          else if(index==5 && categoryName =="Bugun" ) {
+            return  Padding(
+                padding: const EdgeInsets.only(left:180.0),
+                child: Text("Yazarlar",style: TextStyle(fontSize: 17,color: Colors.white),),
+            );
+          }
+          else if(index==6 && categoryName =="Bugun" ) {
+            return  Padding(
+                padding: const  EdgeInsets.only(left:1.0),
+                child: HeadlineAuthorWidget(category: categoryName)
             );
           }
         }

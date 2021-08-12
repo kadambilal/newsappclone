@@ -28,6 +28,7 @@ class _MainViewState extends State<MainView> {
       builder: (context, model, child) {
         return Scaffold(
         //  drawer: NavDrawer(),
+          backgroundColor: Colors.black12,
           bottomNavigationBar: buildBottomNavigationBar(model, context),
           body: PageStorage(
               bucket: _bucked, child: getViewForIndex(model.currentIndex)),
