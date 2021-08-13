@@ -1,10 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'dart:core';
-
 import 'package:newsappclone/RestApi/models/gallery_model.dart';
 import 'package:newsappclone/RestApi/services/rest_api.dart';
 
@@ -15,7 +11,7 @@ class HeadlineGalleryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 1),
+      padding: const EdgeInsets.only(left: 1),
       child: FutureBuilder<GalleryNewsList>(
         future: RestApi.fetchGeneralNews(category),
         builder: (context,snapshot) {
@@ -27,7 +23,6 @@ class HeadlineGalleryWidget extends StatelessWidget {
             );
             return Container(
               height: 150,
-
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: snapshot.data!.galleryNews.length,
@@ -36,17 +31,15 @@ class HeadlineGalleryWidget extends StatelessWidget {
                   String? url1 = snapshot.data!.galleryNews[index].url1;
                   return
                     Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
                      color: Colors.black,
                         child: Stack(
                             children: [
                               Positioned(child: Image.network(url1.toString()),),
-                              Positioned(top:90, left: 20,height: 125,width: 145, child: Text(spot.toString(),maxLines: 3,
-                                style: TextStyle(color: Colors.white,fontSize: 13,backgroundColor:Colors.black,),) ,),
+                              Positioned(top:90, left: 20,height: 125,width: 145,
+                                child: Text(spot.toString(),maxLines: 3,
+                                style: TextStyle(color: Colors.white,fontSize: 13,
+                                  backgroundColor:Colors.black,),) ,),
                             ],
-
                       ),
                     );
                 },

@@ -11,7 +11,6 @@ class HomeNavigationView extends StatefulWidget {
   @override
   _HomeNavigationViewState createState() => _HomeNavigationViewState();
 }
-
 class _HomeNavigationViewState extends State<HomeNavigationView>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
@@ -26,7 +25,6 @@ class _HomeNavigationViewState extends State<HomeNavigationView>
             vsync: this,
             initialIndex: model.currentIndex,
             length: TabConstant.instance.homeCategoryList.length);
-
         _tabController.addListener(() {
           if (!_tabController.indexIsChanging) {
             model.setIndex(_tabController.index);

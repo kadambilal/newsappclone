@@ -7,10 +7,8 @@ import '../home_navigation_viewmodel.dart';
 
 class HomeCategoryPageModel extends BaseViewModel {
   late int _currentPage;
-
   final TabCategory _category;
   late bool hasMore;
-
   late bool _isLoading;
   late List<BaseDataModel> _data;
   late StreamController<List<BaseDataModel>>? controller;
@@ -34,30 +32,24 @@ class HomeCategoryPageModel extends BaseViewModel {
       _data.addAll(_initialItemList);
       locator<HomeNavigationViewModel>().setCategoryDataList(_category, _data);
     }
-
     controller?.add(_data);
   }
   prepareInitialDataByCategory(bool clearCachedData) {
-    _initialItemList.add(HeadlineCDataModel(clearCachedData: clearCachedData));
-
+    _initialItemList.add(HeadlineTopNews(clearCachedData: clearCachedData));
     if (_category.id == TabConstant.today.id) {
       _initialItemList.add(HeadlineTopNews());
     }
   }
-
   Future<void> refresh({bool clearCachedData = true}) {
     return loadMore(clearCachedData: clearCachedData);
   }
-
   Future<void> loadMore({bool clearCachedData = false}) async {
     if (clearCachedData) {
       _data.clear();
       controller?.add(_data);
       await Future.delayed(Duration(milliseconds: 0));
-
       prepareInitialDataByCategory(true);
       _data.addAll(_initialItemList);
-
       controller?.add(_data);
       _currentPage = 0;
       hasMore = true;
@@ -66,11 +58,8 @@ class HomeCategoryPageModel extends BaseViewModel {
       return Future.value();
     }
     _isLoading = true;
-
     _currentPage++;
     _isLoading = false;
-
-
   }
 
   @override

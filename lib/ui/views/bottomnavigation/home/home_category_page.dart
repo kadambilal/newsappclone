@@ -1,9 +1,7 @@
-import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsappclone/constants/tab_constant.dart';
 import 'package:newsappclone/data/basedatamodel/base_data_model.dart';
-
 import 'package:newsappclone/thirdparty/inviewscroll/src/inview_notifier_list.dart';
 import 'package:newsappclone/ui/widgets/home/header_author_widget.dart';
 import 'package:newsappclone/ui/widgets/home/header_gallery_widget.dart';
@@ -15,11 +13,9 @@ import 'package:stacked/stacked.dart';
 class HomeCategoryPage extends StatelessWidget {
   final int index;
   final TabCategory category;
-
   const HomeCategoryPage(
       {Key? key, required this.index, required this.category})
       : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +30,7 @@ class HomeCategoryPage extends StatelessWidget {
           stream: model.controller?.stream,
           builder: (context, AsyncSnapshot<List<BaseDataModel>> snapshot) {
             if (!snapshot.hasData) {
-              print("deneme");
+              print("data error");
               return Center(child: CupertinoActivityIndicator());
             } else {
                return RefreshIndicator(
@@ -56,14 +52,12 @@ class HomeCategoryPage extends StatelessWidget {
   InViewNotifierList buildInViewNotifierList(HomeCategoryPageModel model,
       String categoryViewKey, AsyncSnapshot<List<BaseDataModel>> snapshot) {
     return InViewNotifierList(
-      // key: PageStorageKey(categoryViewKey),
       itemCount: snapshot.data!.length + 1,
       onListEndReached: () {
         if (!model.isDataLoading) {
           model.loadMore();
         }
       },
-     // physics: ClampingScrollPhysics(),
       builder: (context, index) {
         String? categoryName = category.name;
       if (index < snapshot.data!.length*2) {
@@ -73,7 +67,6 @@ class HomeCategoryPage extends StatelessWidget {
                     child: HeadlineTopWidget(category: categoryName) //onemlli header tab.
             );
           }
-
           else if(index==1 ) {
             return  Padding(
                 padding: const EdgeInsets.only(left:180.0),
@@ -82,7 +75,7 @@ class HomeCategoryPage extends StatelessWidget {
           }
           else if(index==2 ) {
             return  Padding(
-                padding: const EdgeInsets.all(1.0),
+                padding: const EdgeInsets.only(left:1.0),
                 child: HeadlineGalleryWidget(category: categoryName)
             );
           }
@@ -90,18 +83,17 @@ class HomeCategoryPage extends StatelessWidget {
             return  Padding(
                 padding: const EdgeInsets.only(left:180.0),
                 child: Text("Video Galeri",style: TextStyle(fontSize: 17,color: Colors.white),)
-
             );
           }
           else if(index==4 ) {
             return  Padding(
-                padding: const EdgeInsets.all(1.0),
+                padding: const EdgeInsets.only(left:1.0),
                 child: HeadlineVideoWidget(category: categoryName)
             );
           }
           else if(index==5 && categoryName =="Bugun" ) {
             return  Padding(
-                padding: const EdgeInsets.only(left:180.0),
+                padding: const EdgeInsets.only(left:190.0),
                 child: Text("Yazarlar",style: TextStyle(fontSize: 17,color: Colors.white),),
             );
           }
@@ -112,13 +104,11 @@ class HomeCategoryPage extends StatelessWidget {
             );
           }
         }
-        return Container(
-        );
+        return Container();
       },
       isInViewPortCondition: (deltaTop, deltaBottom, vpHeight) {
         return (deltaTop < (0.5 * vpHeight) &&
             deltaBottom > (0.5 * vpHeight) - 200);
-        return deltaTop < (0.5 * vpHeight) && deltaBottom > (0.5 * vpHeight);
       },
     );
   }

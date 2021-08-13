@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsappclone/viewmodel/bottomnavigation/main_navigation_view_model.dart';
 import 'package:stacked/stacked.dart';
-
 import '../../../commons/theme/colors.dart';
 import '../../../commons/theme/theme_data_extention.dart';
 import '../../../constants/strings.dart';
@@ -27,19 +26,15 @@ class _MainViewState extends State<MainView> {
     return ViewModelBuilder<MainViewModel>.reactive(
       builder: (context, model, child) {
         return Scaffold(
-        //  drawer: NavDrawer(),
           backgroundColor: Colors.black12,
           bottomNavigationBar: buildBottomNavigationBar(model, context),
           body: PageStorage(
               bucket: _bucked, child: getViewForIndex(model.currentIndex)),
-          // body: IndexedStack(index: model.currentIndex, children: _screens),
         );
       },
       viewModelBuilder: () => MainViewModel(),
     );
   }
-
-
   BottomNavigationBar buildBottomNavigationBar(
       MainViewModel model, BuildContext context) {
     return BottomNavigationBar(

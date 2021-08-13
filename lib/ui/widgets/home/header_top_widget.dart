@@ -1,12 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import 'package:newsappclone/RestApi/models/news_model.dart';
 import 'package:newsappclone/RestApi/services/rest_api.dart';
-
 
 class HeadlineTopWidget extends StatelessWidget {
   final String? category;
@@ -17,7 +13,7 @@ class HeadlineTopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     int index = 0;
     return Padding(
-      padding: const EdgeInsets.only(top: 1),
+      padding: const EdgeInsets.only(left: 1),
       child: FutureBuilder<NewsList>(
         future: RestApi.fetchNews(category),
         builder: (context,snapshot) {
@@ -35,7 +31,7 @@ class HeadlineTopWidget extends StatelessWidget {
                     String? image = snapshot.data!.news[index].coverImg;
                     return
                        Card(
-                        //  color: Colors.red,
+                         color: Colors.black,
                          child: Stack(
                            alignment: Alignment.center,
                            children: [
@@ -43,11 +39,7 @@ class HeadlineTopWidget extends StatelessWidget {
                              Positioned(top:180, left: 30,height: 125,width: 300, child: Text(title.toString(),
                                maxLines: 3,style: TextStyle(color: Colors.yellowAccent,fontSize: 20,backgroundColor:Colors.black),) ,),
                            ],
-
                          ),
-
-
-
                       );
                   },
               ),

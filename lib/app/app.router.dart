@@ -19,7 +19,6 @@ class StackedRouter extends RouterBase {
     MainView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => MainView(),
-        settings: data,
       );
     },
   };

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 extension ThemeDataExtention on ThemeData {
-
   TextStyle get bodySmall1 {
     return TextStyle(
       fontFamily: 'Inter',

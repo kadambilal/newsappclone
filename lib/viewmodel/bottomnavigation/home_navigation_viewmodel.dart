@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:newsappclone/constants/tab_constant.dart';
 import 'package:newsappclone/data/basedatamodel/base_data_model.dart';
-
 import 'package:stacked/stacked.dart';
 
 @lazySingleton

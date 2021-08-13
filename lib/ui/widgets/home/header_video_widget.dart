@@ -10,7 +10,7 @@ class HeadlineVideoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 1),
+      padding: const EdgeInsets.only(left: 1),
       child: FutureBuilder<VideoNewsList>(
         future: RestApi.fetchVideoNews(category),
         builder: (context,snapshot) {
@@ -27,19 +27,16 @@ class HeadlineVideoWidget extends StatelessWidget {
                   String? image = snapshot.data!.videoNews[index].image;
                   return
                     Card(
-                     /* shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),*/
                       color: Colors.black,
                         child :  Stack(
                             children: [
                             Positioned(child: Image.network(image.toString()),),
-                            Positioned(top:75, left: 20,height: 125,width: 150, child: Text(spot.toString(),maxLines: 3,
-                            style: TextStyle(color: Colors.white,fontSize: 13,backgroundColor:Colors.black,),) ,),
+                            Positioned(top:75, left: 20,height: 125,width: 150,
+                              child: Text(spot.toString(),maxLines: 3,
+                                 style: TextStyle(color: Colors.white,fontSize: 13,
+                                    backgroundColor:Colors.black,),) ,),
                             ],
-
                           ),
-
                     );
                 },
               ),
